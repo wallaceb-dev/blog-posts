@@ -1,0 +1,169 @@
+*,
+*::after,
+*::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button,
+input::placeholder {
+  font-family: inherit;
+  color: inherit;
+}
+
+:root {
+  /* color-scheme */
+  --hue: 220;
+  --text: var(--hue) 4.8% 8.9%;
+  --accent1: var(--hue) 43.6% 57.5%;
+  --accent2: var(--hue) 71.4% 95.9%;
+  --bkg: var(--hue) 100% 99.6%;
+
+  /* box-shadows */
+  --boxs-sm: 4px 6px 8px hsl(var(--accent1) / 14%),
+    -3px 3px 18px 2px hsl(var(--accent1) / 12%),
+    2px 5px 10px -3px hsl(var(--accent1) / 20%);
+  --boxs-lg: 0px 8px 10px hsl(var(--accent1) / 14%),
+    0px 3px 14px 2px hsl(var(--accent1) / 12%),
+    0px 5px 5px -3px hsl(var(--accent1) / 20%);
+
+  /* sizing */
+  --xlg: 2.369rem;
+  --lg: 1.777rem;
+  --md: 1.333rem;
+  --sm: 1rem;
+  --xsm: 0.75rem;
+
+  /* misc */
+  --radius--sm: 5px;
+  --radius--lg: 15px;
+  --transition: all 160ms ease-in;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='40' height='40' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(247, 250, 252,1)'/%3E%3Ccircle cx='-15' cy='15' r='1' fill='rgba(237, 242, 247,1)'/%3E%3Ccircle cx='-5' cy='25' r='1' fill='rgba(237, 242, 247,1)'/%3E%3Ccircle cx='5' cy='15' r='1' fill='rgba(237, 242, 247,1)'/%3E%3Ccircle cx='25' cy='15' r='1' fill='rgba(237, 242, 247,1)'/%3E%3Ccircle cx='15' cy='25' r='1' fill='rgba(237, 242, 247,1)'/%3E%3Ccircle cx='35' cy='25' r='1' fill='rgba(237, 242, 247,1)'/%3E%3Ccircle cx='15' cy='15' r='1' fill='rgba(226, 232, 240,1)'/%3E%3Ccircle cx='35' cy='15' r='1' fill='rgba(226, 232, 240,1)'/%3E%3Ccircle cx='5' cy='25' r='1' fill='rgba(226, 232, 240,1)'/%3E%3Ccircle cx='25' cy='25' r='1' fill='rgba(226, 232, 240,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+  color: hsl(var(--text));
+  margin: var(--xlg) var(--lg);
+  font-size: var(--sm);
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: var(--xlg);
+  max-width: 1400px;
+  margin: auto;
+}
+
+h1 {
+  font-size: var(--xlg);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+small {
+  font-size: var(--xsm);
+}
+
+[type='search'] {
+  -webkit-appearance: none;
+  background-color: hsl(var(--bkg));
+  border-radius: var(--radius--lg);
+  padding: var(--sm) var(--lg);
+  font-size: var(--sm);
+  box-shadow: var(--boxs-sm);
+  -webkit-box-shadow: var(--boxs-lg);
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  display: block;
+}
+
+[type='search']::placeholder,
+[type='search']::-webkit-input-placeholder {
+  font-size: var(--sm);
+  color: hsl(var(--text) / 0.5);
+}
+
+[type='search']:focus {
+  outline: hsl(var(--accent1) / 0.5) auto 1px;
+}
+
+[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--xlg);
+  align-items: start;
+}
+
+.post {
+  background-color: hsl(var(--bkg));
+  border-radius: var(--radius--lg);
+  padding: var(--lg);
+  box-shadow: var(--boxs-lg);
+  display: grid;
+  gap: var(--md);
+}
+
+.post__meta {
+  display: grid;
+  gap: 10px;
+}
+
+.post__tag--container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.post__tag {
+  padding: 3px 6px;
+  border-radius: var(--radius--sm);
+  background-color: hsl(var(--accent1));
+  color: hsl(var(--bkg));
+  font-size: var(--xsm);
+}
+
+.post__date {
+  font-size: var(--xsm);
+  text-transform: uppercase;
+}
+
+.post__date,
+.post__author--name,
+.post_header {
+  font-weight: 700;
+}
+
+.post__header {
+  font-size: var(--md);
+  line-height:1.1;
+  background-color:hsl(var(--accent2));
+  padding:var(--md) var(--lg);
+  margin: 0 calc(var(--lg) * -1);
+}
+
+.post__header a:is(:active, :link, :visited) {
+  text-decoration: none;
+  color:hsl(var(--text));
+  transition: var(--transtion);
+}
+
+.post__header a:is(:hover, :focus) {
+  color:hsl(var(--text) / .8);
+}
+
+.post__author {
+  display:flex
+}
