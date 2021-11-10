@@ -3,7 +3,7 @@
 ![](https://via.placeholder.com/55/ead41c/000000?text=JS)
 ![](https://via.placeholder.com/55/00a4d6/fff?text=CSS)
 ![](https://via.placeholder.com/55/f25320/fff?text=HTML)
-![](https://github.com/wallaceb-dev/blog-posts/blob/master/video.webm?raw=true)
+![[Blog](https://github.com/wallaceb-dev/blog-posts/blob/master/blog.gif)](https://youtu.be/Sa8NB5srtgY)
 
 ### Presentation
 
